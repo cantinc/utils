@@ -7,7 +7,7 @@ export function once (target: any, prop: string, desc: TypedPropertyDescriptor<a
     return key in this ? this[key] : (this[key] = fn.apply(this, arguments))
   }
 
-  return Object.assign({
+  return Object.assign(desc, {
     [descKey]: descValue,
-  }, desc)
+  })
 }
