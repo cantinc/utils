@@ -4,6 +4,7 @@ export function once (target: any, prop: string, desc: TypedPropertyDescriptor<a
 
   const fn = desc.get || desc.value
   const descValue = function () {
+    // @ts-ignore
     return key in this ? this[key] : (this[key] = fn.apply(this, arguments))
   }
 

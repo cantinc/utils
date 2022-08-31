@@ -58,6 +58,41 @@ console.log(count)
 // 1
 ```
 
+## Validation
+
+The next utils helps validate a data
+
+### Validation
+
+Use `validation` to make validation of an object
+
+```typescript jsx
+import {
+  email,
+  maxLength,
+  minLength,
+  required,
+  validation,
+  ValidationMap,
+} from '@cantinc/utils'
+
+interface Data {
+  email?: string
+  password?: string
+  name?: string
+  birthday?: string
+}
+
+const validationMap: ValidationMap<Data> = {
+  email: [required, email, maxLength(128)],
+  password: [required, minLength(9)],
+  name: [required, maxLength(128)],
+}
+
+console.log(validation(validationMap, {}))
+console.log(validation(validationMap, { email: 'error'}))
+```
+
 ## Issues
 If you find a bug or have a suggestion, please file an issue on [GitHub](https://github.com/d8corp/innet-utils/issues).
 
