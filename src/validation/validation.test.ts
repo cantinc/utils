@@ -120,6 +120,13 @@ describe('validation', () => {
           },
         })
       })
+      it('should return success', async () => {
+        const map: ValidationMap<{test?: string}> = {
+          test: [inn],
+        }
+
+        expect(await validation(map, { test: '7704340310' })).toEqual(undefined)
+      })
       it('should return undefined', async () => {
         const map: ValidationMap<{test?: string}> = {
           test: [inn],

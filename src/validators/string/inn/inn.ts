@@ -24,7 +24,7 @@ export function inn (value: string | undefined, key: string): ValidationResponse
 
   const dif = result - (((result / 11) | 0) * 11)
 
-  if (dif !== Number(value[9])) {
+  if (dif % 10 !== Number(value[9])) {
     return {
       error: ValidationErrors.inn,
       data: { key },
