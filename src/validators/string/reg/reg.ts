@@ -1,7 +1,11 @@
 import { ValidationErrors, ValidationResponse } from '../../../validation'
 
-export function reg (reg: RegExp) {
-  return function (value: string | undefined, key: string): ValidationResponse {
+export interface RegValidationData {
+  regId?: any
+}
+
+export function reg (reg: RegExp, regId?: any) {
+  return function (value: string | undefined, key: string): ValidationResponse<RegValidationData> {
     if (!value) return
 
     if (!reg.test(value)) {
@@ -9,6 +13,7 @@ export function reg (reg: RegExp) {
         error: ValidationErrors.reg,
         data: {
           key,
+          regId,
         },
       }
     }
