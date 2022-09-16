@@ -4,5 +4,6 @@ export declare enum ValidationErrors {
     inn = 2,
     phone = 3,
     minLength = 4,
-    maxLength = 5
+    maxLength = 5,
+    reg = 6
 }

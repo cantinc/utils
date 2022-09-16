@@ -5,4 +5,5 @@ export enum ValidationErrors {
   phone,
   minLength,
   maxLength,
+  reg,
 }
