@@ -1,2 +1,2 @@
 import { ValidationResponse } from '../../../validation';
-export declare function email(value: string | undefined, key: string): ValidationResponse;
+export declare function email<K>(value: string, key: K): ValidationResponse<K>;

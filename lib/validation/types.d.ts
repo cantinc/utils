@@ -1,13 +1,13 @@
 import { ValidationErrors } from './constants';
-export interface ValidationErrorData {
-    key: string;
+export interface ValidationErrorData<K> {
+    key: K;
 }
-export interface ValidationError<D extends object = {}> {
+export interface ValidationError<K, D = {}> {
     error: ValidationErrors;
-    data: ValidationErrorData & D;
+    data: ValidationErrorData<K> & D;
 }
-export declare type ValidationResponse<D extends object = {}> = ValidationError<D> | undefined | void;
-export declare type Validator<D extends object, K extends keyof D, E extends object = {}> = (value: D[K], key: K, data: D) => ValidationResponse<E> | Promise<ValidationResponse<E>>;
-export declare type ValidationMap<D extends object> = {
+export declare type ValidationResponse<K, D = {}> = ValidationError<K, D> | undefined | void;
+export declare type Validator<D, K extends keyof D, E = {}> = (value: D[K], key: K, data: D) => ValidationResponse<K, E> | Promise<ValidationResponse<K, E>>;
+export declare type ValidationMap<D> = {
     [K in keyof D]?: Validator<D, K>[];
 };

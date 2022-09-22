@@ -5,9 +5,7 @@ export interface RegValidationData {
 }
 
 export function reg (reg: RegExp, regId?: any) {
-  return function (value: string | undefined, key: string): ValidationResponse<RegValidationData> {
-    if (!value) return
-
+  return function <K> (value: string, key: K): ValidationResponse<K, RegValidationData> {
     if (!reg.test(value)) {
       return {
         error: ValidationErrors.reg,

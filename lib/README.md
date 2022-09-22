@@ -77,16 +77,16 @@ import {
 } from '@cantinc/utils'
 
 interface Data {
-  email?: string
-  password?: string
-  name?: string
+  email: string
+  password: string
+  name: string
   birthday?: string
 }
 
 const validationMap: ValidationMap<Data> = {
-  email: [required, email, maxLength(128)],
-  password: [required, minLength(9)],
-  name: [required, maxLength(128)],
+  email: required([email, maxLength(128)]),
+  password: required([minLength(9)]),
+  name: required([maxLength(128)]),
 }
 
 console.log(validation(validationMap, {}))

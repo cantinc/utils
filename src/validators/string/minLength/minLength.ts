@@ -4,10 +4,8 @@ export interface MinLengthValidationError {
   min: number
 }
 
-export function minLength (min: number) {
-  return function (value: string | undefined, key: string): ValidationResponse<MinLengthValidationError> {
-    if (!value) return
-
+export function minLength <K> (min: number) {
+  return function (value: string, key: K): ValidationResponse<K, MinLengthValidationError> {
     if (value.length < min) {
       return {
         error: ValidationErrors.minLength,

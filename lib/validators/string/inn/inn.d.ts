@@ -2,4 +2,4 @@ import { ValidationResponse } from '../../../validation';
 export interface InnValidationError {
     length?: number;
 }
-export declare function inn(value: string | undefined, key: string): ValidationResponse<InnValidationError>;
+export declare function inn<K>(value: string, key: K): ValidationResponse<K, InnValidationError>;

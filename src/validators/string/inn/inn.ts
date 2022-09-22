@@ -6,9 +6,7 @@ export interface InnValidationError {
   length?: number
 }
 
-export function inn (value: string | undefined, key: string): ValidationResponse<InnValidationError> {
-  if (!value) return
-
+export function inn <K> (value: string, key: K): ValidationResponse<K, InnValidationError> {
   if (value.length !== 10) {
     return {
       error: ValidationErrors.inn,

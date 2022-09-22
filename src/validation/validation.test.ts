@@ -1,28 +1,40 @@
-import { email, inn, maxLength, minLength, phone, required, validation, ValidationErrors, ValidationMap } from '..'
+import {
+  email,
+  inn,
+  maxLength,
+  minLength,
+  optional,
+  phone,
+  required,
+  validation,
+  ValidationErrors,
+  ValidationMap,
+} from '..'
 
 describe('validation', () => {
   describe('any', () => {
     describe('required', () => {
       it('should return error', async () => {
-        const map: ValidationMap<{test1?: number, test2?: string}> = {
-          test1: [required],
-          test2: [required],
+        const map: ValidationMap<{test1: number, test2: string}> = {
+          test1: required(),
+          test2: required(),
         }
 
+        // @ts-ignore
         expect(await validation(map, {})).toEqual({
           error: ValidationErrors.required,
           data: {
             key: 'test1',
           },
         })
-
+        // @ts-ignore
         expect(await validation(map, { test2: 'test2' })).toEqual({
           error: ValidationErrors.required,
           data: {
             key: 'test1',
           },
         })
-
+        // @ts-ignore
         expect(await validation(map, { test1: 123 })).toEqual({
           error: ValidationErrors.required,
           data: {
@@ -31,9 +43,9 @@ describe('validation', () => {
         })
       })
       it('should return undefined', async () => {
-        const map: ValidationMap<{test1?: number, test2?: string}> = {
-          test1: [required],
-          test2: [required],
+        const map: ValidationMap<{test1: number, test2: string}> = {
+          test1: required(),
+          test2: required(),
         }
 
         expect(await validation(map, { test1: 1, test2: '2' })).toBe(undefined)
@@ -53,13 +65,13 @@ describe('validation', () => {
     describe('email', () => {
       it('should skip empty', async () => {
         const map: ValidationMap<{test?: string}> = {
-          test: [email],
+          test: optional([email]),
         }
 
         expect(await validation(map, {})).toBe(undefined)
       })
       it('should return error', async () => {
-        const map: ValidationMap<{test?: string}> = {
+        const map: ValidationMap<{test: string}> = {
           test: [email],
         }
 
@@ -85,7 +97,7 @@ describe('validation', () => {
         })
       })
       it('should return undefined', async () => {
-        const map: ValidationMap<{test?: string}> = {
+        const map: ValidationMap<{test: string}> = {
           test: [email],
         }
 
@@ -95,13 +107,13 @@ describe('validation', () => {
     describe('inn', () => {
       it('should skip empty', async () => {
         const map: ValidationMap<{test?: string}> = {
-          test: [inn],
+          test: optional([inn]),
         }
 
         expect(await validation(map, {})).toBe(undefined)
       })
       it('should return error', async () => {
-        const map: ValidationMap<{test?: string}> = {
+        const map: ValidationMap<{test: string}> = {
           test: [inn],
         }
 
@@ -121,14 +133,14 @@ describe('validation', () => {
         })
       })
       it('should return success', async () => {
-        const map: ValidationMap<{test?: string}> = {
+        const map: ValidationMap<{test: string}> = {
           test: [inn],
         }
 
         expect(await validation(map, { test: '7704340310' })).toEqual(undefined)
       })
       it('should return undefined', async () => {
-        const map: ValidationMap<{test?: string}> = {
+        const map: ValidationMap<{test: string}> = {
           test: [inn],
         }
 
@@ -138,13 +150,13 @@ describe('validation', () => {
     describe('phone', () => {
       it('should skip empty', async () => {
         const map: ValidationMap<{test?: string}> = {
-          test: [phone],
+          test: optional([phone]),
         }
 
         expect(await validation(map, {})).toBe(undefined)
       })
       it('should return error', async () => {
-        const map: ValidationMap<{test?: string}> = {
+        const map: ValidationMap<{test: string}> = {
           test: [phone],
         }
 
@@ -163,7 +175,7 @@ describe('validation', () => {
         })
       })
       it('should return undefined', async () => {
-        const map: ValidationMap<{test?: string}> = {
+        const map: ValidationMap<{test: string}> = {
           test: [phone],
         }
 
@@ -173,13 +185,13 @@ describe('validation', () => {
     describe('minLength', () => {
       it('should skip empty', async () => {
         const map: ValidationMap<{test?: string}> = {
-          test: [minLength(3)],
+          test: optional([minLength(3)]),
         }
 
         expect(await validation(map, {})).toBe(undefined)
       })
       it('should return error', async () => {
-        const map: ValidationMap<{test?: string}> = {
+        const map: ValidationMap<{test: string}> = {
           test: [minLength(3)],
         }
 
@@ -200,7 +212,7 @@ describe('validation', () => {
         })
       })
       it('should return undefined', async () => {
-        const map: ValidationMap<{test?: string}> = {
+        const map: ValidationMap<{test: string}> = {
           test: [minLength(3)],
         }
 
@@ -210,13 +222,13 @@ describe('validation', () => {
     describe('maxLength', () => {
       it('should skip empty', async () => {
         const map: ValidationMap<{test?: string}> = {
-          test: [maxLength(3)],
+          test: optional([maxLength(3)]),
         }
 
         expect(await validation(map, {})).toBe(undefined)
       })
       it('should return error', async () => {
-        const map: ValidationMap<{test?: string}> = {
+        const map: ValidationMap<{test: string}> = {
           test: [maxLength(3)],
         }
 
@@ -229,7 +241,7 @@ describe('validation', () => {
         })
       })
       it('should return undefined', async () => {
-        const map: ValidationMap<{test?: string}> = {
+        const map: ValidationMap<{test: string}> = {
           test: [maxLength(3)],
         }
 

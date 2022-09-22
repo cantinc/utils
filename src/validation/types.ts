@@ -1,18 +1,18 @@
 import { ValidationErrors } from './constants'
 
-export interface ValidationErrorData {
-  key: string
+export interface ValidationErrorData <K> {
+  key: K
 }
 
-export interface ValidationError <D extends object = {}> {
+export interface ValidationError <K, D = {}> {
   error: ValidationErrors
-  data: ValidationErrorData & D
+  data: ValidationErrorData<K> & D
 }
 
-export type ValidationResponse <D extends object = {}> = ValidationError<D> | undefined | void
+export type ValidationResponse <K, D = {}> = ValidationError<K, D> | undefined | void
 
-export type Validator<D extends object, K extends keyof D, E extends object = {}> = (value: D[K], key: K, data: D) => ValidationResponse<E> | Promise<ValidationResponse<E>>
+export type Validator<D, K extends keyof D, E = {}> = (value: D[K], key: K, data: D) => ValidationResponse<K, E> | Promise<ValidationResponse<K, E>>
 
-export type ValidationMap<D extends object> = {
+export type ValidationMap<D> = {
   [K in keyof D]?: Validator<D, K>[]
 }
