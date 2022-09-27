@@ -5,7 +5,7 @@ export interface ValidationErrorData <K> {
 }
 
 export interface ValidationError <K, D = {}> {
-  error: ValidationErrors
+  error: ValidationErrors | string
   data: ValidationErrorData<K> & D
 }
 

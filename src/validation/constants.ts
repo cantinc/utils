@@ -1,9 +1,9 @@
 export enum ValidationErrors {
-  required,
-  email,
-  inn,
-  phone,
-  minLength,
-  maxLength,
-  reg,
+  required = 'required',
+  email = 'email',
+  inn = 'inn',
+  phone = 'phone',
+  minLength = 'minLength',
+  maxLength = 'maxLength',
+  reg = 'reg',
 }

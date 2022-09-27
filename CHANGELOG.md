@@ -2,6 +2,11 @@
 
 ## v1.2
 
+### v1.2.1 [![27.09.2022](https://img.shields.io/date/1664270349)](https://github.com/cantinc/utils/tree/v1.2.1)
+
+- improve types
+- change `ValidationErrors` enum values
+
 ### v1.2.0 [![22.09.2022](https://img.shields.io/date/1663875454)](https://github.com/cantinc/utils/tree/v1.2.0)
 
 - add `optional` validator

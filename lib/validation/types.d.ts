@@ -3,7 +3,7 @@ export interface ValidationErrorData<K> {
     key: K;
 }
 export interface ValidationError<K, D = {}> {
-    error: ValidationErrors;
+    error: ValidationErrors | string;
     data: ValidationErrorData<K> & D;
 }
 export declare type ValidationResponse<K, D = {}> = ValidationError<K, D> | undefined | void;
