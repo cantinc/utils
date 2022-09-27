@@ -3,6 +3,7 @@ export enum ValidationErrors {
   email = 'email',
   inn = 'inn',
   phone = 'phone',
+  url = 'url',
   minLength = 'minLength',
   maxLength = 'maxLength',
   reg = 'reg',
