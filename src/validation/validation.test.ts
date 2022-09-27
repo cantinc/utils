@@ -6,6 +6,7 @@ import {
   optional,
   phone,
   required,
+  url,
   validation,
   ValidationErrors,
   ValidationMap,
@@ -246,6 +247,41 @@ describe('validation', () => {
         }
 
         expect(await validation(map, { test: 'abc' })).toBe(undefined)
+      })
+    })
+    describe('url', () => {
+      it('should skip empty', async () => {
+        const map: ValidationMap<{test?: string}> = {
+          test: optional([url]),
+        }
+
+        expect(await validation(map, {})).toBe(undefined)
+      })
+      it('should return error', async () => {
+        const map: ValidationMap<{test: string}> = {
+          test: [url],
+        }
+
+        expect(await validation(map, { test: '1234' })).toEqual({
+          error: ValidationErrors.url,
+          data: {
+            key: 'test',
+          },
+        })
+
+        expect(await validation(map, { test: 'cantinc.com' })).toEqual({
+          error: ValidationErrors.url,
+          data: {
+            key: 'test',
+          },
+        })
+      })
+      it('should return undefined', async () => {
+        const map: ValidationMap<{test: string}> = {
+          test: [url],
+        }
+
+        expect(await validation(map, { test: 'https://cantinc.com' })).toBe(undefined)
       })
     })
   })
