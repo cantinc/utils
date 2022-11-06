@@ -119,15 +119,21 @@ describe('validation', () => {
         }
 
         expect(await validation(map, { test: '123' })).toEqual({
-          error: ValidationErrors.inn,
+          error: ValidationErrors.innLength,
           data: {
             key: 'test',
-            length: 10,
           },
         })
 
         expect(await validation(map, { test: '6732213993' })).toEqual({
           error: ValidationErrors.inn,
+          data: {
+            key: 'test',
+          },
+        })
+
+        expect(await validation(map, { test: 'asdasda' })).toEqual({
+          error: ValidationErrors.innNumber,
           data: {
             key: 'test',
           },
@@ -146,6 +152,13 @@ describe('validation', () => {
         }
 
         expect(await validation(map, { test: '6732213992' })).toBe(undefined)
+      })
+      it('should work with 12 symbols', async () => {
+        const map: ValidationMap<{test: string}> = {
+          test: [inn],
+        }
+
+        expect(await validation(map, { test: '671501505502' })).toBe(undefined)
       })
     })
     describe('phone', () => {

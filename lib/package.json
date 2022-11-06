@@ -1,6 +1,6 @@
 {
   "name": "@cantinc/utils",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "Cant inc. utils",
   "main": "index.js",
   "module": "index.es6.js",

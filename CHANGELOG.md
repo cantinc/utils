@@ -2,6 +2,10 @@
 
 ## v1.2
 
+### v1.2.5 [![27.09.2022](https://img.shields.io/date/1667741272)](https://github.com/cantinc/utils/tree/v1.2.5)
+
+- fix `inn` validator
+
 ### v1.2.4 [![27.09.2022](https://img.shields.io/date/1664284937)](https://github.com/cantinc/utils/tree/v1.2.4)
 
 - improve `url` validator
