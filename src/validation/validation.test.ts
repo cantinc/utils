@@ -180,13 +180,6 @@ describe('validation', () => {
             key: 'test',
           },
         })
-
-        expect(await validation(map, { test: '+7 (123) 123-12-34' })).toEqual({
-          error: ValidationErrors.phone,
-          data: {
-            key: 'test',
-          },
-        })
       })
       it('should return undefined', async () => {
         const map: ValidationMap<{test: string}> = {
@@ -194,6 +187,7 @@ describe('validation', () => {
         }
 
         expect(await validation(map, { test: '+7 (999) 123-12-34' })).toBe(undefined)
+        expect(await validation(map, { test: '+7 (481) 266-66-66' })).toBe(undefined)
       })
     })
     describe('minLength', () => {
