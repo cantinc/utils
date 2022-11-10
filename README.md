@@ -93,6 +93,19 @@ console.log(validation(validationMap, {}))
 console.log(validation(validationMap, { email: 'error'}))
 ```
 
+## Utils
+
+### placeholder
+
+Placeholder inserts data into a string
+
+```typescript
+import { placeholder } from '@cantinc/utils'
+
+placeholder(`Test: {test}`, { test: 'success' })
+// Test: success
+```
+
 ## Issues
 If you find a bug or have a suggestion, please file an issue on [GitHub](https://github.com/d8corp/innet-utils/issues).
 

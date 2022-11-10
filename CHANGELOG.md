@@ -2,6 +2,10 @@
 
 ## v1.2
 
+### v1.2.7 [![10.11.2022](https://img.shields.io/date/1668103252)](https://github.com/cantinc/utils/tree/v1.2.7)
+
+- add `placeholder` util
+
 ### v1.2.6 [![27.09.2022](https://img.shields.io/date/1667742730)](https://github.com/cantinc/utils/tree/v1.2.6)
 
 - fix `phone` validator
