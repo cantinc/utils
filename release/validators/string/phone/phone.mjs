@@ -1,0 +1,16 @@
+import '../../../validation/index.mjs';
+import { ValidationErrors } from '../../../validation/constants.mjs';
+
+const PHONE = /\+7 \([0-9]{3}\) [0-9]{3}-[0-9]{2}-[0-9]{2}/;
+function phone(value, key) {
+    if (!PHONE.test(value)) {
+        return {
+            error: ValidationErrors.phone,
+            data: {
+                key,
+            },
+        };
+    }
+}
+
+export { phone };

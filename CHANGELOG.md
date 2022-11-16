@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.3
+
+### v1.3.0 [![10.11.2022](https://img.shields.io/date/1668601148)](https://github.com/cantinc/utils/tree/v1.3.0)
+
+- improve environment
+- add empty string in `optional`
+
 ## v1.2
 
 ### v1.2.7 [![10.11.2022](https://img.shields.io/date/1668103252)](https://github.com/cantinc/utils/tree/v1.2.7)
