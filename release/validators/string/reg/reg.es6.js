@@ -1,5 +1,5 @@
-import '../../../validation/index.mjs';
-import { ValidationErrors } from '../../../validation/constants.mjs';
+import '../../../validation/index.es6.js';
+import { ValidationErrors } from '../../../validation/constants.es6.js';
 
 function reg(reg, regId) {
     return function (value, key) {

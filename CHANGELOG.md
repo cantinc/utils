@@ -2,6 +2,10 @@
 
 ## v1.3
 
+### v1.3.1 [![02.12.2022](https://img.shields.io/date/1669934999)](https://github.com/cantinc/utils/tree/v1.3.1)
+
+- fix import bug
+
 ### v1.3.0 [![10.11.2022](https://img.shields.io/date/1668601148)](https://github.com/cantinc/utils/tree/v1.3.0)
 
 - improve environment

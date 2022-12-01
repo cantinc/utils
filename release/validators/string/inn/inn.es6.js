@@ -1,5 +1,5 @@
-import '../../../validation/index.mjs';
-import { ValidationErrors } from '../../../validation/constants.mjs';
+import '../../../validation/index.es6.js';
+import { ValidationErrors } from '../../../validation/constants.es6.js';
 
 const offsets10 = [2, 4, 10, 3, 5, 9, 4, 6, 8];
 const offsets12 = [7, 2, 4, 10, 3, 5, 9, 4, 6, 8];
