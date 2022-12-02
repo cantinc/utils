@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.4
+
+### v1.4.0 [![02.12.2022](https://img.shields.io/date/1669989559)](https://github.com/cantinc/utils/tree/v1.4.0)
+
+- remove async validation
+
 ## v1.3
 
 ### v1.3.1 [![02.12.2022](https://img.shields.io/date/1669934999)](https://github.com/cantinc/utils/tree/v1.3.1)
