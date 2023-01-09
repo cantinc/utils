@@ -2,6 +2,10 @@
 
 ## v1.4
 
+### v1.4.1 [![09.01.2023](https://img.shields.io/date/1673260714)](https://github.com/cantinc/utils/tree/v1.4.1)
+
+- `required` error on empty array
+
 ### v1.4.0 [![02.12.2022](https://img.shields.io/date/1669989559)](https://github.com/cantinc/utils/tree/v1.4.0)
 
 - remove async validation

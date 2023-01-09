@@ -3,7 +3,7 @@ import { ValidationErrors } from '../../../validation/constants.es6.js';
 
 function required(validators) {
     return [(value, key, values) => {
-            if (!value && typeof value !== 'number') {
+            if (Array.isArray(value) ? !value.length : !value && typeof value !== 'number') {
                 return {
                     error: ValidationErrors.required,
                     data: { key },

@@ -7,7 +7,7 @@ var constants = require('../../../validation/constants.js');
 
 function required(validators) {
     return [(value, key, values) => {
-            if (!value && typeof value !== 'number') {
+            if (Array.isArray(value) ? !value.length : !value && typeof value !== 'number') {
                 return {
                     error: constants.ValidationErrors.required,
                     data: { key },
