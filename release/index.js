@@ -19,6 +19,8 @@ var maxLength = require('./validators/string/maxLength/maxLength.js');
 var reg = require('./validators/string/reg/reg.js');
 var url = require('./validators/string/url/url.js');
 var placeholder = require('./utils/string/placeholder/placeholder.js');
+var strip = require('./utils/math/strip/strip.js');
+var randomHash = require('./utils/generators/randomHash/randomHash.js');
 
 
 
@@ -39,3 +41,5 @@ exports.reg = reg.reg;
 exports.url = url.url;
 exports.PLACEHOLDER_REG = placeholder.PLACEHOLDER_REG;
 exports.placeholder = placeholder.placeholder;
+exports.strip = strip.strip;
+exports.randomHash = randomHash.randomHash;

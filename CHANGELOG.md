@@ -2,6 +2,10 @@
 
 ## v1.4
 
+### v1.4.2 [![29.01.2023](https://img.shields.io/date/1675019736)](https://github.com/cantinc/utils/tree/v1.4.2)
+
+- add `strip` and `randomHash` utils
+
 ### v1.4.1 [![09.01.2023](https://img.shields.io/date/1673260714)](https://github.com/cantinc/utils/tree/v1.4.1)
 
 - `required` error on empty array

@@ -15,3 +15,5 @@ export { maxLength } from './validators/string/maxLength/maxLength.es6.js';
 export { reg } from './validators/string/reg/reg.es6.js';
 export { url } from './validators/string/url/url.es6.js';
 export { PLACEHOLDER_REG, placeholder } from './utils/string/placeholder/placeholder.es6.js';
+export { strip } from './utils/math/strip/strip.es6.js';
+export { randomHash } from './utils/generators/randomHash/randomHash.es6.js';
